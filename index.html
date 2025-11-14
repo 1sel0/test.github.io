@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil - Nombre de Usuario</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Comentario: Si prefieres usar FontAwesome, reemplaza la línea anterior con el CDN de FontAwesome -->
+  <style>
+    /* ======= Edita aquí el color de fondo minimalista ======= */
+    :root{ --bg-color: #f7f8fb; /* color por defecto: gris muy claro */ }
+    body{ background: var(--bg-color); }
+
+    /* Contenedor principal centrado y con máximo ancho para mejor lectura */
+    .profile-card{
+      max-width: 900px;
+      margin: 32px auto;
+      background: transparent; /* mantén transparente para ver el fondo minimalista */
+      padding: 18px;
+    }
+
+    /* Imagen/logotipo circular en la cabecera */
+    .profile-image{
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 12px; /* esquinas ligeramente redondeadas */
+      box-shadow: 0 6px 18px rgba(15,15,15,0.06);
+      background: #ffffff;
+    }
+
+    /* Nombre y texto centrado */
+    .profile-name{ font-size: 1.6rem; font-weight: 700; }
+    .profile-title{ font-size: 1rem; color: #495057; }
+    .profile-desc{ color: #6c757d; margin-top: 8px; }
+
+    /* Fila de redes sociales: ancho máximo 60% y centrada */
+    .social-row{ max-width: 60%; margin: 18px auto; display:flex; justify-content:space-between; align-items:center; }
+    .social-row a{ text-decoration:none; width:48px; height:48px; display:flex; align-items:center; justify-content:center; border-radius:10px; background: rgba(255,255,255,0.6); box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+    .social-row a:hover{ transform: translateY(-3px); }
+
+    /* Lista de botones (links) */
+    .link-btn{
+      width: 100%;
+      background: #ffffff;
+      border: 0;
+      box-shadow: 0 6px 18px rgba(15,15,15,0.04);
+      border-radius: 12px;
+      padding: 10px 12px;
+      display:flex; align-items:center; gap:12px;
+    }
+    .link-thumb{ width:54px; height:54px; object-fit:cover; border-radius:8px; }
+    .link-title{ font-weight:600; }
+    .menu-dots{ margin-left:auto; }
+
+    /* Footer pequeño */
+    footer{ margin-top: 28px; text-align:center; color:#6c757d; font-size:0.9rem; }
+
+    @media (max-width: 576px){
+      .profile-image{ width:110px; height:110px; }
+      .social-row{ max-width: 100%; gap:8px; padding:0 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="profile-card">
+    <!-- CABECERA -->
+    <div class="text-center mb-3">
+      <!-- Comentario: reemplaza src por la ruta de tu logo/foto: assets/images/logo.png -->
+      <img src="assets/images/principal.jpg" alt="Foto / Logo" class="profile-image mb-2" id="profileImage">
+      <!-- Comentario: para editar el nombre, título y descripción, modifica el texto dentro de los elementos siguientes -->
+      <h1 class="profile-name" id="profileName">Mujer Bonita</h1>
+      <div class="profile-title" id="profileTitle">@mujer_bonita_ls</div>
+      <p class="profile-desc" id="profileDesc">Cejas Pestañas y Alaciados</p>
+    </div>
+
+    <!-- REDES SOCIALES -->
+    <div class="social-row" id="socialRow">
+      <!-- Comentario: sustituye href por tus enlaces. Si no quieres incluir una red, borra el <a> correspondiente; el espacio se ajusta automáticamente (hasta 60% del ancho). -->
+      <a href="https://www.instagram.com/mujer_bonita_ls?igsh=MTlhOW5kenVndmg3" target="_blank" aria-label="Instagram" id="linkInstagram">
+        <i class="bi bi-instagram" style="font-size:1.2rem"></i>
+      </a>
+
+      <a href="https://www.instagram.com/lacamiseria120?igsh=YzJ1NnFtN3l5Yjdh" target="_blank" aria-label="TikTok" id="linkTiktok">
+        <!-- TikTok no está en Bootstrap Icons; usamos icono genérico 
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/></svg>-->
+        <i class="bi bi-tiktok" style="font-size:1.2rem"></i>
+      </a>
+
+      <a href="https://www.instagram.com/lacamiseria120?igsh=YzJ1NnFtN3l5Yjdh" target="_blank" aria-label="Facebook" id="linkFacebook">
+        <i class="bi bi-facebook" style="font-size:1.2rem"></i>
+      </a>
+
+      <a href="https://www.instagram.com/lacamiseria120?igsh=YzJ1NnFtN3l5Yjdh" target="_blank" aria-label="YouTube" id="linkYoutube">
+        <i class="bi bi-youtube" style="font-size:1.2rem"></i>
+      </a>
+
+      <a href="https://wa.me/+5215588133196" target="_blank" aria-label="WhatsApp" id="linkWhatsapp">
+        <i class="bi bi-whatsapp" style="font-size:1.2rem"></i>
+      </a>
+
+
+
+      <!-- Logo de Bootstrap (u otra tecnología) 
+      <a href="#" target="_blank" aria-label="Bootstrap" id="linkBootstrap">
+        // Comentario: reemplaza si usas otra tecnología.
+        <i class="bi bi-bootstrap" style="font-size:1.2rem"></i>
+      </a>-->
+    </div>
+
+    <!-- LISTADO DE PÁGINAS/ENLACES 
+    // <div class="mt-4">-->
+      <!-- Botón 1 
+      <div class="mb-3">
+        <button class="link-btn" onclick="openLink('https://ejemplo.com/servicio1')">
+          // Comentario: reemplaza src por assets/images/servicio1.png
+          <img src="assets/images/placeholder-1.png" alt="thumb" class="link-thumb">
+          <div>
+            <div class="link-title">Calendario</div>
+            <div class="small text-muted">Descripción corta opcional</div>
+          </div>
+          <div class="menu-dots dropdown">
+            <button class="btn btn-sm" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-three-dots-vertical"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu1">
+              <li><a class="dropdown-item" href="#" onclick="shareLink('https://ejemplo.com/servicio1')">Compartir</a></li>
+              <li><a class="dropdown-item" href="#" onclick="copyToClipboard('https://ejemplo.com/servicio1')">Copiar link</a></li>
+            </ul>
+          </div>
+        </button>
+      </div>-->
+
+      <div class="mb-3">
+        <button class="link-btn" onclick="openLink('https://ejemplo.com/servicio1')">
+
+          <img src="assets/images/principal.jpg" alt="thumb" class="link-thumb">
+
+          <div class="text-content flex-grow-1">
+            <div class="link-title">Calendario</div>
+            <div class="small text-muted">Descripción corta opcional</div>
+          </div>
+          <!-- 
+
+          <div class="menu-dots dropdown">
+            <button class="btn btn-sm" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-three-dots-vertical"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu1">
+              <li><a class="dropdown-item" href="#" onclick="shareLink('https://ejemplo.com/servicio1')">Compartir</a></li>
+              <li><a class="dropdown-item" href="#" onclick="copyToClipboard('https://ejemplo.com/servicio1')">Copiar link</a></li>
+            </ul>
+          </div> -->
+
+        </button>
+      </div>
+
+
+      <!-- Botón 2 -->
+      <div class="mb-3">
+        <button class="link-btn" onclick="openLink('https://ejemplo.com/servicio1')">
+
+          <img src="assets/images/principal.jpg" alt="thumb" class="link-thumb">
+
+          <div class="text-content flex-grow-1">
+            <div class="link-title">Agenda tu cita</div>
+            <div class="small text-muted">Descripción corta opcional</div>
+          </div>
+          <!-- 
+          <div class="menu-dots dropdown">
+            <button class="btn btn-sm" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-three-dots-vertical"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu1">
+              <li><a class="dropdown-item" href="#" onclick="shareLink('https://ejemplo.com/servicio1')">Compartir</a></li>
+              <li><a class="dropdown-item" href="#" onclick="copyToClipboard('https://ejemplo.com/servicio1')">Copiar link</a></li>
+            </ul>
+          </div>-->
+
+        </button>
+      </div>
+
+      <!-- Botón 3 -->
+      <div class="mb-3">
+        <button class="link-btn" onclick="openLink('https://ejemplo.com/servicio1')">
+
+          <img src="assets/images/principal.jpg" alt="thumb" class="link-thumb">
+
+          <div class="text-content flex-grow-1">
+            <div class="link-title">www.mujerbonita.com</div>
+            <div class="small text-muted">Descripción corta opcional</div>
+          </div>
+          <!-- 
+          <div class="menu-dots dropdown">
+            <button class="btn btn-sm" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-three-dots-vertical"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu1">
+              <li><a class="dropdown-item" href="#" onclick="shareLink('https://ejemplo.com/servicio1')">Compartir</a></li>
+              <li><a class="dropdown-item" href="#" onclick="copyToClipboard('https://ejemplo.com/servicio1')">Copiar link</a></li>
+            </ul>
+          </div>-->
+
+        </button>
+      </div>
+
+    <!-- FOOTER con links de información -->
+    <footer>
+      <nav class="d-flex justify-content-center gap-3">
+        <a href="/cookies.html">Cookies</a>
+        <a href="/privacidad.html">Privacidad</a>
+        <a href="/reporte.html">Reporte</a>
+      </nav>
+    </footer>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Función para abrir un link en nueva pestaña
+    function openLink(url){ window.open(url, '_blank'); }
+
+    // Copiar al portapapeles
+    function copyToClipboard(text){
+      if(navigator.clipboard){
+        navigator.clipboard.writeText(text).then(()=>{
+          alert('Enlace copiado al portapapeles');
+        }).catch(()=>{ alert('No se pudo copiar'); });
+      } else {
+        // Fallback
+        const el = document.createElement('textarea'); el.value = text; document.body.appendChild(el);
+        el.select(); try{ document.execCommand('copy'); alert('Enlace copiado'); }catch{ alert('No se pudo copiar'); } el.remove();
+      }
+    }
+
+    // Compartir: usa Web Share API si está disponible
+    function shareLink(url){
+      if(navigator.share){
+        navigator.share({ title: document.title, url: url }).catch(()=>{});
+      } else {
+        // Fallback: copiar en su lugar
+        copyToClipboard(url);
+      }
+    }
+
+    // Comentario: Puedes personalizar dinámicamente los textos e imagenes si deseas usar JSON o CMS.
+  </script>
+</body>
+</html>
